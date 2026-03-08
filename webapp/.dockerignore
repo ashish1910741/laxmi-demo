@@ -1,0 +1,10 @@
+__pycache__
+*.pyc
+.git
+.gitignore
+.env
+.env.local
+.DS_Store
+*.md
+node_modules
+npm-debug.log

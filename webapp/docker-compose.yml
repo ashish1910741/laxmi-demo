@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  webapp:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: laxmi-webapp
+    ports:
+      - "0.0.0.0:8000:8000"
+    environment:
+      - PYTHONUNBUFFERED=1
+    restart: unless-stopped
+    networks:
+      - laxmi-network
+    volumes:
+      - ./index.html:/app/index.html:ro
+      - ./style.css:/app/style.css:ro
+      - ./script.js:/app/script.js:ro
+
+networks:
+  laxmi-network:
+    driver: bridge
